@@ -7,7 +7,7 @@ public class LevelOrderTraversal {
 
 	public static void main(String[] args) {
 		
-		TreeNode root = TreeUtil.get7NodeTree();
+		TreeNode root = TreeUtil.get15NodeTree();
 		
 		System.out.println("Level order Traversal Of Tree : ");
 		printLevelOrder(root);
