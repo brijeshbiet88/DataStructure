@@ -31,9 +31,39 @@ public class Traversal {
 		
 		System.out.println("Postorder Traversal Of Tree : ");
 		postOrderTraversal(root);
+		
+		System.out.println();
+		
+		System.out.println("Itearative Postorder Traversal Of Tree : ");
+		postOrderTraversalIterative(root);
 	}
 	
 	
+	private static void postOrderTraversalIterative(TreeNode root) {
+		Stack<TreeNode> s1 = new Stack<TreeNode>();
+		Stack<TreeNode> s2 = new Stack<TreeNode>();
+		TreeNode temp = root;
+		s1.push(temp);
+		while (!s1.isEmpty()) {
+			TreeNode tmp = s1.pop();
+			s2.push(tmp);
+			
+			if(tmp.left != null) {
+				s1.push(tmp.left);
+			}
+			if(tmp.right != null) {
+				s1.push(tmp.right);
+			}
+		
+		}
+		
+		while(!s2.isEmpty()) {
+			System.out.print(s2.pop().data+" ");
+		}
+		
+	}
+
+
 	private static void inOrderTraversalIterative(TreeNode root) {
 		Stack<TreeNode> s = new Stack<TreeNode>();
 		TreeNode temp = root;
