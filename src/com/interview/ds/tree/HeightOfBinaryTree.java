@@ -23,9 +23,13 @@ public class HeightOfBinaryTree {
 		if (root == null)
 			return 0;
 		
+		/*Find the Height Of Left Subtree*/
 		int leftHeight = findHeight(root.left);
+		
+		/*Find Height Of Right Subtree*/
 		int rightHight = findHeight(root.right);
 		
+		/* Return MaxHeight */
 		if(leftHeight > rightHight)
 			return 1 + leftHeight;
 		else 
