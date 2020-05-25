@@ -34,7 +34,7 @@ public class AddTwoLinkedList {
 
 	/*
 	 * Adding two LinkedLists Represented by numbers 98979 and 6994
-	 * Assuming that start is longer is greater than start2 
+	 * Assuming that start is greater than start2 
 	 */
 	private static ListNode addLinkedList(ListNode start, ListNode start2) {
 		int carry = 0;
