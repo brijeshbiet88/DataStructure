@@ -19,7 +19,7 @@ public class ReverseList {
 		LinkedListUtil.printList(start);
 	}
 
-	private static ListNode reverseRec(ListNode curr, ListNode prev) {
+	public static ListNode reverseRec(ListNode curr, ListNode prev) {
 		
 		if(curr == null) return prev;
 		
@@ -30,7 +30,7 @@ public class ReverseList {
 		
 	}
 
-	private static ListNode reverse(ListNode start) {
+	public static ListNode reverse(ListNode start) {
 		ListNode prev = null , curr = start, next ;
 		
 		while(curr != null) {
