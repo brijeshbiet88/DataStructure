@@ -29,6 +29,18 @@ public class LinkedListUtil {
 		return start;
 	}
 	
+	public static ListNode get3NodeList() {
+		ListNode start = new ListNode(0);
+
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		
+		start.setNext(node1);
+		node1.setNext(node2);
+		
+		return start;
+	}
+	
 	public static void printList(ListNode start) {
 		ListNode temp = start;
 		
