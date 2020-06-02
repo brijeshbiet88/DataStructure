@@ -31,6 +31,7 @@ public class VerticalOrderTraversal {
 			list = entry.getValue();
 			for(Integer data : list)
 			System.out.print(data+" ");
+			System.out.println();
 		}
 		
 	}
