@@ -29,6 +29,12 @@ public class Traversal {
 		
 		System.out.println();
 		
+
+		System.out.println("Method 2 Iterative Preorder Traversal Of Tree : ");
+		preOrderTraversalIterative2(root);
+		
+		System.out.println();
+		
 		System.out.println("Postorder Traversal Of Tree : ");
 		postOrderTraversal(root);
 		
@@ -36,9 +42,36 @@ public class Traversal {
 		
 		System.out.println("Itearative Postorder Traversal Of Tree : ");
 		postOrderTraversalIterative(root);
+		
+		System.out.println();
+		
+		System.out.println("Itearative Postorder Traversal Of Tree Using One Stack: ");
+		postorderIterOneStack(root);
 	}
 	
 	
+	private static void preOrderTraversalIterative2(TreeNode root) {
+		
+		if(root == null) return;
+		Stack<TreeNode> s = new Stack<TreeNode>();
+		s.push(root);
+		
+		while(!s.isEmpty()) {
+			
+			TreeNode temp = s.pop();
+			System.out.print(temp.data+" ");
+			if(temp.right != null) {
+				s.push(temp.right);
+			}
+			if(temp.left != null) {
+				s.push(temp.left);
+			}
+			
+		}
+		
+	}
+
+
 	private static void postOrderTraversalIterative(TreeNode root) {
 		Stack<TreeNode> s1 = new Stack<TreeNode>();
 		Stack<TreeNode> s2 = new Stack<TreeNode>();
@@ -131,6 +164,29 @@ public class Traversal {
 		postOrderTraversal(root.getLeft());
 		postOrderTraversal(root.getRight());
 		System.out.print(root.getData()+" ");
+	}
+	
+	
+	public static void postorderIterOneStack(TreeNode root) {
+		if (root == null)
+			return;
+		TreeNode pre = null;
+		Stack<TreeNode> s = new Stack<TreeNode>();
+		while (root != null || !s.empty()) {
+			if (root != null) {
+				s.push(root);
+				root = root.left;
+			} else {
+				root = s.peek();
+				if (root.right == null || root.right == pre) {
+					System.out.print(root.data + " ");
+					s.pop();
+					pre = root;
+					root = null;
+				} else
+					root = root.right;
+			}
+		}
 	}
 
 }
