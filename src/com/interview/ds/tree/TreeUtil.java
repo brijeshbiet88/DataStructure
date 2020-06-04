@@ -97,6 +97,32 @@ public static TreeNode get15NodeTree() {
             } 
         } 
     }
+	
+	public static void printLevelOrder2(TreeNode root)  
+    { 
+        Queue<TreeNode> queue = new LinkedList<TreeNode>(); 
+        queue.add(root); 
+        while (!queue.isEmpty())  
+        { 
+        	int size = queue.size();
+        	
+			for (int i = 0; i < size; i++) {
+				TreeNode tempNode = queue.poll();
+				System.out.print(tempNode.data + " ");
+
+				/* Enqueue left child */
+				if (tempNode.left != null) {
+					queue.add(tempNode.left);
+				}
+
+				/* Enqueue right child */
+				if (tempNode.right != null) {
+					queue.add(tempNode.right);
+				}
+			}
+			System.out.println();
+        } 
+    }
 
 
 	public static TreeNode getTree() {
