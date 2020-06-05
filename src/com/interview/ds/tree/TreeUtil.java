@@ -157,5 +157,27 @@ public static TreeNode get15NodeTree() {
 
 		return root;
 	}
+	
+	public static TreeNode getBST() {
+		TreeNode root = new TreeNode(50);
+
+		TreeNode node1 = new TreeNode(30);
+		TreeNode node2 = new TreeNode(70);
+		TreeNode node3 = new TreeNode(20);
+		TreeNode node4 = new TreeNode(40);
+		TreeNode node5 = new TreeNode(60);
+		TreeNode node6 = new TreeNode(80);
+		
+		root.setLeft(node1);
+		root.setRight(node2);
+
+		node1.setLeft(node3);
+		node1.setRight(node4);
+
+		node2.setLeft(node5);
+		node2.setRight(node6);
+		
+		return root;
+	}
 
 }
