@@ -19,7 +19,7 @@ public class ConstructBT {
 		preIndex++;
 		if(start == end) return newNode;
 		else {
-			int inIndex = searchInorderIndex (inOrder , start , end , newNode.data);
+			int inIndex = searchInorderIndex (inOrder , newNode.data);
 			newNode.setLeft(constructTree(inOrder, preOrder, start, inIndex-1));
 			newNode.setRight(constructTree(inOrder, preOrder, inIndex+1, end));
 		}
@@ -27,7 +27,7 @@ public class ConstructBT {
 		
 		return newNode;
 	}
-	private static int searchInorderIndex(int[] inOrder, int start, int end, int data) {
+	private static int searchInorderIndex(int[] inOrder, int data) {
 	for(int i = 0 ; i < inOrder.length ; i++) {
 		if(inOrder[i] == data)
 			return i;
