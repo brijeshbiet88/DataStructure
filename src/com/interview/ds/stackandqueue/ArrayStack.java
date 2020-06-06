@@ -1,9 +1,9 @@
-package com.interview.ds.stack;
+package com.interview.ds.stackandqueue;
 
-public class DynamicArrayStack {
+public class ArrayStack {
 	
 	public static void main(String [] args) {
-		DynamicArrayStack stack = new DynamicArrayStack();
+		ArrayStack stack = new ArrayStack();
 		System.out.println("Stack capacity : "+stack.capacity);
 		System.out.println("Stack Top : "+stack.top);
 		System.out.println("Is Empty : ? "+stack.isEmpty());
@@ -13,25 +13,20 @@ public class DynamicArrayStack {
 		stack.push(3);
 		System.out.println("Is Full : ? "+stack.isFull());
 		stack.push(4);
-		System.out.println("Size Of Stack : "+stack.size());
 		stack.pop();
 		stack.pop();
 		stack.pop();
 		System.out.println("Is Empty : ? "+stack.isEmpty());
 		stack.pop();
-		
-		System.out.println("Size Of Stack : "+stack.size());
 	}
 
-	
-	
 	private int top ;
 	private int capacity ;
 	private int [] array;
 	
-	public DynamicArrayStack() {
+	public ArrayStack() {
 		top = -1;
-		capacity = 1;
+		capacity = 3;
 		array = new int[capacity];
 	}
 	
@@ -44,19 +39,12 @@ public class DynamicArrayStack {
 	}
 
 	public void push(int data) {
-		if(isFull()) {
-			doubleStack();
+		if(isFull())System.out.println("Stack Overflow");
+		else {
+			array[++top] = data;
 		}
-		array[++top] = data;
 	}
 	
-	private void doubleStack() {
-		int [] newArray = new int[capacity*2];
-		System.arraycopy(array, 0, newArray, 0, capacity);
-		capacity = capacity*2;
-		array = newArray;
-	}
-
 	public int pop() {
 	    int data = 0;
 		if(isEmpty()) System.out.println("Stack Empty");
@@ -66,9 +54,12 @@ public class DynamicArrayStack {
 		}
 		return data;
 	}
-	
-	public int size() {
-		return top + 1;
-	}
-
 }
+/*Stack capacity : 3
+Stack Top : -1
+Is Empty : ? true
+Is Empty : ? false
+Is Full : ? true
+Stack Overflow
+Is Empty : ? true
+Stack Empty*/

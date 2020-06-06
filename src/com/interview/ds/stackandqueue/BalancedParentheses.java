@@ -1,4 +1,4 @@
-package com.interview.ds.stack;
+package com.interview.ds.stackandqueue;
 
 import java.util.Stack;
 
