@@ -8,9 +8,11 @@ public class PalindromeCheck {
 		String str1 = "abccba";
 		String str2 = "abcdcba";
 		String str3 = "abcdmba";
-		System.out.println("Is String " + str1 + "  Palindrome ? " + isPalindrome(str1));
+		String str4 = "p";
+		System.out.println("Is String " + str1 + " Palindrome ? " + isPalindrome(str1));
 		System.out.println("Is String " + str2 + " Palindrome ? " + isPalindrome(str2));
 		System.out.println("Is String " + str3 + " Palindrome ? " + isPalindrome(str3));
+		System.out.println("Is String " + str4 + " Palindrome ? " + isPalindrome(str4));
 	}
 
 	private static boolean isPalindrome(String str) {
