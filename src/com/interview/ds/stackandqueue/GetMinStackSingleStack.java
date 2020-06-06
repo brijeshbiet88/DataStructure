@@ -2,7 +2,7 @@ package com.interview.ds.stackandqueue;
 
 import java.util.Stack;
 
-class GetMinStackSingleStack
+public class GetMinStackSingleStack
 { 
 	public static void main(String[] args) {
 		GetMinStackSingleStack stack = new GetMinStackSingleStack();
@@ -50,7 +50,7 @@ class GetMinStackSingleStack
     	stack = new Stack<Integer>(); 
     	} 
   
-	int getMin() {
+	public int getMin() {
 		if (stack.isEmpty()) {
 			System.out.println("Stack is empty");
 
@@ -58,7 +58,7 @@ class GetMinStackSingleStack
 		return minElement;
 	}
   
-	int peek() {
+	public int peek() {
 		if (stack.isEmpty()) {
 			System.out.println("Stack is empty ");
 			return stack.peek();
