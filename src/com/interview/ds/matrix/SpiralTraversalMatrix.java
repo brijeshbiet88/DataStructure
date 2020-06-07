@@ -26,7 +26,7 @@ public class SpiralTraversalMatrix {
 		int i, rowIndex = 0, columnIndex = 0;
 
 		while (rowIndex < rows && columnIndex < columns) {
-			
+
 			for (i = columnIndex; i < columns; ++i) {
 				System.out.print(mat[rowIndex][i] + " ");
 			}
