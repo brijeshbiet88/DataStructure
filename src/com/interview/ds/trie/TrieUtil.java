@@ -7,13 +7,25 @@ public class TrieUtil {
 		insert(root, "apple");
 		insert(root, "ape");
 		insert(root, "alarm");
+		insert(root, "allow");
+		insert(root, "always");
+		insert(root, "alfa");
+		insert(root, "arm");
+		insert(root, "art");
+		insert(root, "ask");
+		insert(root, "acer");
+		insert(root, "acre");
+		insert(root, "acne");
 		insert(root, "alert");
 		insert(root, "allow");
 		insert(root, "all");
 		insert(root, "bat");
 		insert(root, "banana");
+		insert(root, "batman");
+		insert(root, "banish");
+		insert(root, "band");
+		insert(root, "bank");
 		insert(root, "bite");
-		insert(root, "ban");
 		insert(root, "cat");
 		insert(root, "camera");
 		insert(root, "card");
@@ -132,5 +144,18 @@ public class TrieUtil {
 
 		temp.endOfWord = true;
 
+	}
+	
+	public static boolean search(TrieNode root, String str) {
+		TrieNode temp = root;
+		for (int i = 0; i < str.length(); i++) {
+			if(temp.children.containsKey(str.charAt(i))) {
+				temp = temp.children.get(str.charAt(i));
+			}
+			else {
+				return false;
+			}
+		}
+		return true;
 	}
 }
