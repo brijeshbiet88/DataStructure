@@ -28,6 +28,11 @@ public class InsertWordsInTrie {
 		System.out.println("Does Word : "+str4+" exists : "+doesExist);
 		doesExist = searchRecursive(root,str5);
 		System.out.println("Does Word : "+str5+" exists : "+doesExist);
+		System.out.println("Delete word : "+str5);
+		delete(root, str5);
+		doesExist = searchRecursive(root,str5);
+		System.out.println("Does Word : "+str5+" exists : "+doesExist);
+		
 	}
 
 	private static boolean search(TrieNode root, String str) {
@@ -100,16 +105,44 @@ public class InsertWordsInTrie {
 		return searchRecursive(node, word, index + 1);
 	}
 
+	public static void delete(TrieNode root ,String word) {
+        delete(root, word, 0);
+    }
+
+	private static boolean delete(TrieNode temp, String word, int index) {
+		if (index == word.length()) {
+			if (!temp.endOfWord) {
+				return false;
+			}
+			temp.endOfWord = false;
+			return temp.children.size() == 0;
+		}
+		char ch = word.charAt(index);
+		TrieNode node = temp.children.get(ch);
+		if (node == null) {
+			return false;
+		}
+		boolean shouldDeleteCurrentNode = delete(node, word, index + 1);
+
+		if (shouldDeleteCurrentNode) {
+			temp.children.remove(ch);
+			return temp.children.size() == 0;
+		}
+		return false;
+	}
 }
 
 
 
 
 /*
- *Does Word : abcd exists : true
+Does Word : abcd exists : true
 Does Word : pqrs exists : true
 Does Word : wxyz exists : true
 Does Word : post exists : false
 Does Word : apple exists : true
+Delete word : apple
+Does Word : apple exists : false
+
  
  */
