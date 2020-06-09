@@ -63,3 +63,12 @@ public class InsertWordsInTrie {
 	}
 
 }
+
+/*
+ *Does Word : abcd exists : true
+Does Word : pqrs exists : true
+Does Word : wxyz exists : true
+Does Word : post exists : false
+Does Word : apple exists : true
+ 
+ */
