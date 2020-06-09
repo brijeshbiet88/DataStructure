@@ -25,6 +25,7 @@ public class TrieUtil {
 		insert(root, "banish");
 		insert(root, "band");
 		insert(root, "bank");
+		insert(root, "ban");
 		insert(root, "bite");
 		insert(root, "cat");
 		insert(root, "camera");
@@ -41,7 +42,6 @@ public class TrieUtil {
 		insert(root, "fox");
 		insert(root, "fish");
 		insert(root, "fat");
-		insert(root, "fried");
 		insert(root, "goat");
 		insert(root, "girl");
 		insert(root, "garland");
@@ -76,34 +76,22 @@ public class TrieUtil {
 		insert(root, "noun");
 		insert(root, "owl");
 		insert(root, "orange");
-		insert(root, "okay");
-		insert(root, "our");
 		insert(root, "parrot");
 		insert(root, "pan");
-		insert(root, "pile");
 		insert(root, "prism");
 		insert(root, "queen");
 		insert(root, "quilt");
 		insert(root, "queue");
-		insert(root, "quirk");
 		insert(root, "rabbit");
 		insert(root, "rat");
 		insert(root, "rashes");
 		insert(root, "rubbish");
 		insert(root, "ship");
 		insert(root, "shine");
-		insert(root, "sun");
 		insert(root, "scene");
 		insert(root, "tiger");
-		insert(root, "tea");
-		insert(root, "tyre");
 		insert(root, "triangle");
 		insert(root, "umbrella");
-		insert(root, "url");
-		insert(root, "unknown");
-		insert(root, "untar");
-		insert(root, "van");
-		insert(root, "vest");
 		insert(root, "vein");
 		insert(root, "vocal");
 		insert(root, "watch");
@@ -115,11 +103,8 @@ public class TrieUtil {
 		insert(root, "xoxo");
 		insert(root, "xiomee");
 		insert(root, "yatch");
-		insert(root, "yarn");
-		insert(root, "yell");
-		insert(root, "yeast");
 		insert(root, "zebra");
-		insert(root, "zoo");
+		
 
 		return root;
 
@@ -137,7 +122,6 @@ public class TrieUtil {
 
 			else {
 				temp.children.put(str.charAt(i), new TrieNode());
-				temp.endOfWord = false;
 				temp = temp.children.get(str.charAt(i));
 			}
 		}

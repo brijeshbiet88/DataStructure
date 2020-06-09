@@ -6,7 +6,7 @@ public class PrintAllWordsWithAPrefix {
 
 	public static void main(String[] args) {
 		TrieNode root = TrieUtil.getTrie();
-		String prefix = "m";
+		String prefix = "ba";
 		printAllWordsWithPrefix(root, prefix);
 
 	}
@@ -32,6 +32,7 @@ public class PrintAllWordsWithAPrefix {
 		
 		if(root.endOfWord) {
 			System.out.println(" "+prefix);
+			if(root.children.isEmpty())
 			return;
 		}
 		
@@ -44,3 +45,11 @@ public class PrintAllWordsWithAPrefix {
 		}
 	}
 }
+
+/*bat
+ batman
+ ban
+ banana
+ band
+ banish
+ bank*/
