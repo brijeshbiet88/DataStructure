@@ -14,7 +14,7 @@ public class InsertWordsInTrie {
 		insert(root , str1);
 		insert(root , str2);
 		insert(root , str3);
-		insert(root , str5);
+		insert(root, str5);
 		
 		boolean doesExist = checkWord(root,str1);
 		System.out.println("Does Word : "+str1+" exists : "+doesExist);
@@ -61,6 +61,26 @@ public class InsertWordsInTrie {
 		temp.endOfWord = true;
 		
 	}
+	
+	public static void insertRecursive(TrieNode root , String word) {
+        insertRecursive(root, word, 0);
+    }
+
+
+    private static void insertRecursive(TrieNode temp, String word, int index) {
+        if (index == word.length()) {
+            temp.endOfWord = true;
+            return;
+        }
+        char ch = word.charAt(index);
+        TrieNode node = temp.children.get(ch);
+
+        if (node == null) {
+            node = new TrieNode();
+            temp.children.put(ch, node);
+        }
+        insertRecursive(node, word, index + 1);
+    }
 
 }
 
