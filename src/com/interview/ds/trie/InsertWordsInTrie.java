@@ -1,7 +1,5 @@
 package com.interview.ds.trie;
 
-import javax.naming.directory.SearchResult;
-
 public class InsertWordsInTrie {
 
 	public static void main(String[] args) {
