@@ -3,7 +3,7 @@ package com.interview.ds.list;
 public class ReverseListInGroupOfK {
 
 	public static void main(String[] args) {
-		ListNode start = LinkedListUtil.getList();
+		ListNode start = LinkedListUtil.getList2();
 		int k = 3;
 		System.out.println("List Before Reversing in Group of : "+k);
 		LinkedListUtil.printList(start);
