@@ -85,3 +85,16 @@ public class RotateBy1CW {
 	}
 
 }
+/*
+ Original Matrix : 
+10 11 12 13 14 
+15 16 17 18 19 
+20 21 22 23 24 
+25 26 27 28 29 
+Matrix After Rotation By 1 Place : 
+15 10 11 12 13 
+20 16 17 18 14 
+25 21 22 23 19 
+26 27 28 29 24 
+ 
+  */
