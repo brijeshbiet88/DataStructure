@@ -4,7 +4,7 @@ public class BuySellStock1Transaction {
 
 	public static void main(String[] args) {
 		System.out.println("Test Case 1 :\n");
-		int [] price = {31 , 33 , 38 , 46 , 32 , 28 , 22 , 29 , 37 , 30 , 40 };
+		int [] price = {31 , 33 , 38 , 46 , 32 , 28 , 22 , 29 , 37 , 30 , 50 };
 		int maxProfit = findMaxProfit(price , price.length);
 		System.out.println("Max Profit In Buying & Sellings Stocks in 1 Transaction is "+maxProfit);
 		System.out.println("\n");
@@ -54,7 +54,6 @@ public class BuySellStock1Transaction {
 
 			if (localMinima < localMaxima && maxProfit < (price[localMaxima] - price[localMinima])) {
 					maxProfit = price[localMaxima] - price[localMinima];
-					System.out.println("Buy at " + price[localMinima] + " and sell at " + price[localMaxima]);
 			}
 			localMinima = localMaxima ;
 		}
