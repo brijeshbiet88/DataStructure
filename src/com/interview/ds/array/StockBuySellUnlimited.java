@@ -66,9 +66,23 @@ public class StockBuySellUnlimited {
 
 }
 /*
+Test Case 1 :
+
 Buy at 21 and sell at 46
 Buy at 22 and sell at 37
 Buy at 30 and sell at 40
 Max Profit In Buying & Sellings Stocks in 3 Transactions is 50
+
+
+Test Case 2 :
+
+Max Profit In Buying & Sellings Stocks in 0 Transactions is 0
+
+
+Test Case 2 :
+
+Buy at 18 and sell at 25
+Max Profit In Buying & Sellings Stocks in 1 Transactions is 7
+
  
  */
