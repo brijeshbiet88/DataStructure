@@ -9,7 +9,7 @@ public class BuySellStock1Transaction {
 		System.out.println("Max Profit In Buying & Sellings Stocks in 1 Transaction is "+maxProfit);
 		System.out.println("\n");
 		System.out.println("Test Case 2 :\n");
-		int [] price2 = {21 , 20 , 19 , 18 , 15};
+		int [] price2 = {21 , 20 , 19 , 18 , 15 , 23 , 27 , 24 , 22};
 		maxProfit = findMaxProfit(price2 , price2.length);
 		System.out.println("Max Profit In Buying & Sellings Stocks in 1 Transaction is "+maxProfit);
 		
@@ -56,6 +56,7 @@ public class BuySellStock1Transaction {
 					maxProfit = price[localMaxima] - price[localMinima];
 					System.out.println("Buy at " + price[localMinima] + " and sell at " + price[localMaxima]);
 			}
+			localMinima = localMaxima ;
 		}
 		return maxProfit;
 	}
@@ -70,7 +71,8 @@ Max Profit In Buying & Sellings Stocks in 1 Transaction is 15
 
 Test Case 2 :
 
-Max Profit In Buying & Sellings Stocks in 1 Transaction is 0
+Buy at 15 and sell at 27
+Max Profit In Buying & Sellings Stocks in 1 Transaction is 12
 
 
 Test Case 2 :
