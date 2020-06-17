@@ -40,15 +40,16 @@ public class DSForConstantTime {
 	
 	public void delete(int data) {
 		if(map.containsKey(data)) {
-			System.out.println("Size Of List Before Deletion "+list.size());
+			System.out.println("Size Of List Before Deleting "+data +" is "+list.size());
 			int index = map.get(data);
 			map.remove(data);
 			
 			int temp = list.get(index);
 			list.set(index, list.get(list.size()-1));
 			list.remove(list.size()-1);
+			map.put(list.get(index), index);
 			System.out.println("Data : "+temp+" Deleted ");
-			System.out.println("Size Of List After Deletion "+list.size());
+			System.out.println("Size Of List After Deleting "+data+" is "+list.size());
 		}else {
 			System.out.println("Data : "+data+" Does not exists");
 		}
@@ -65,11 +66,6 @@ public class DSForConstantTime {
 	public static void main(String[] args) {
 		
 		DSForConstantTime ds = new DSForConstantTime();
-		ds.insert(1);
-		ds.insert(2);
-		ds.insert(3);
-		ds.insert(4);
-		ds.insert(5);
 		ds.insert(6);
 		ds.insert(7);
 		ds.insert(8);
@@ -97,10 +93,12 @@ public class DSForConstantTime {
 		ds.search(11);
 		ds.search(12);
 
-		ds.delete(10);
-		ds.delete(10);
+		ds.delete(7);
+		ds.delete(7);
 		ds.delete(11);
 		ds.delete(12);
+		ds.delete(10);
+		ds.search(10);
 	}
 
 }
