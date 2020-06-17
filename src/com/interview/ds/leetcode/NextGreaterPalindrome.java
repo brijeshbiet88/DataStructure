@@ -2,6 +2,10 @@ package com.interview.ds.leetcode;
 
 import java.util.Scanner;
 
+/*
+ * All the cases Not Covered
+ * Covered Some Cases Only For Even Digit Numbers
+ * */
 public class NextGreaterPalindrome {
 
 	public static void main(String[] args) {
