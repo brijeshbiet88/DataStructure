@@ -3,8 +3,29 @@ package com.interview.ds.leetcode;
 public class RainTrappingProblem {
 
 	public static void main(String[] args) {
-		int[] a = { 5, 2, 4, 3, 1, 6 };
+		int[] a = { 9, 2, 4, 5, 1, 8 };
 		System.out.println("Water Trapped : " + findWaterTrapped(a));
+		System.out.println("Water Trapped : " + findWaterTrapped(a , a.length));
+
+	}
+	
+	private static int findWaterTrapped(int[] a, int n) {
+
+		int result = 0;
+
+		for (int i = 1; i < n - 1; i++) {
+			int left = a[i];
+			for (int j = 0; j < i; j++)
+				left = Math.max(left, a[j]);
+
+			int right = a[i];
+			for (int j = i + 1; j < n; j++)
+				right = Math.max(right, a[j]);
+
+			result = result + (Math.min(left, right) - a[i]);
+		}
+
+		return result;
 
 	}
 
