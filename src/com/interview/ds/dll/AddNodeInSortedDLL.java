@@ -53,3 +53,17 @@ public class AddNodeInSortedDLL {
 	}
 
 }
+/*
+ *List Before Adding A Node In Sorted List : 
+[1]-->[2]-->[4]-->[6]-->[8]-->[10]-->[12]-->[13]-->[15]-->[17]-->Null
+
+List After Adding Node In Sorted List : DListNode [data=0]
+[0]-->[1]-->[2]-->[4]-->[6]-->[8]-->[10]-->[12]-->[13]-->[15]-->[17]-->Null
+
+List After Adding Node In Sorted List : DListNode [data=5]
+[0]-->[1]-->[2]-->[4]-->[5]-->[6]-->[8]-->[10]-->[12]-->[13]-->[15]-->[17]-->Null
+
+List After Adding Node In Sorted List : DListNode [data=20]
+[0]-->[1]-->[2]-->[4]-->[5]-->[6]-->[8]-->[10]-->[12]-->[13]-->[15]-->[17]-->[20]-->Null
+
+ */
