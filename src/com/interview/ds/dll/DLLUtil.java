@@ -47,9 +47,9 @@ public class DLLUtil {
 	
 	public static void printList(DListNode head) {
 		DListNode temp = head;
-		
+		System.out.print("Null<--");
 		while(temp != null) {
-			System.out.print("["+temp.data+"]-->");
+			System.out.print("["+temp.data+"]<-->");
 			temp = temp.next;
 		}
 		System.out.println("Null");
