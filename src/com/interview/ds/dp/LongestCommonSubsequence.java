@@ -1,6 +1,6 @@
 package com.interview.ds.dp;
 
-public class LongestCOmoonSubsequence {
+public class LongestCommonSubsequence {
 
 	public static void main(String[] args) {
 		String str1 = "abcdefa";
