@@ -4,7 +4,9 @@ public class EggDropping {
 
 	public static void main(String[] args) {
 		EggDropping ed = new EggDropping();
-        int result = ed.calculate(2,10);
+		int noOfEggs = 2 , noOfFloors = 10;
+		System.out.println("No of Eggs : "+noOfEggs+" and No of Floors "+noOfFloors);
+        int result = ed.calculate(noOfEggs,noOfFloors);
         System.out.println("Minimum No of Attempts in WorstCase To Find Floor Where Egg will Break From : "+result);
 
 	}
@@ -37,3 +39,8 @@ public class EggDropping {
 	}
 
 }
+/*
+No of Eggs : 2 and No of Floors 10
+Minimum No of Attempts in WorstCase To Find Floor Where Egg will Break From : 4
+
+ */
