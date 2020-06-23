@@ -6,11 +6,13 @@ public class LongestCOmoonSubsequence {
 		String str1 = "abcdefa";
 		String str2 = "acbcfa";
 		
+		System.out.println("Longest Common SubSeuqence Of Strings "+str1+" and "+str2);
+		
 		int lcs = findLCS(str1 , str2);
-		System.out.println("Longest Common SubSequence : "+lcs);
+		System.out.println("Longest Common SubSequence Using Dynamic Programming : "+lcs);
 		
 		lcs = findLCSRec(str1.toCharArray() , str2.toCharArray() , 0 ,  0);
-		System.out.println("Longest Common SubSequence : "+lcs);
+		System.out.println("Longest Common SubSequence Using Recursion  Method   : "+lcs);
 
 	}
 
@@ -47,3 +49,9 @@ public class LongestCOmoonSubsequence {
 	    }
 
 }
+/*
+Longest Common SubSeuqence Of Strings abcdefa and acbcfa
+Longest Common SubSequence Using Dynamic Programming : 5
+Longest Common SubSequence Using Recursion  Method   : 5
+
+ */
