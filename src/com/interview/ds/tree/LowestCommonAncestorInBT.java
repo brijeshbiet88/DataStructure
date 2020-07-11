@@ -109,5 +109,4 @@ public class LowestCommonAncestorInBT {
 		return stack;
 	
 	}
-
 }
