@@ -3,11 +3,37 @@ package com.interview.ds.bst;
 public class BSTCreationAndalidation {
 	
 	public static void main(String[] args) {
-		int [] a = {7 , 3 , 1 , 2 , 4 , 5 , 6};
+		System.out.println("-----------------------Test  Case 1 ------------------------");
+		int [] a = {4 , 2 , 5 , 1 , 3 , 6 , 7};
 		BSTNode root = createBST(a);
 		System.out.println("Level Order Traversal : ");
 		BSTUtil.traverseLevelOrder(root);
 		System.out.println("Is Valid BST : "+CheckIfBST.isBST(root, Integer.MIN_VALUE,Integer.MAX_VALUE));
+		System.out.println();
+		
+		System.out.println("-----------------------Test  Case 2 ------------------------");
+		int [] b = {1 , 2 , 3 , 1 , 2};
+		BSTNode root2 = createBST(b);
+		System.out.println("Level Order Traversal : ");
+		BSTUtil.traverseLevelOrder(root2);
+		System.out.println("Is Valid BST : "+CheckIfBST.isBST(root2, Integer.MIN_VALUE,Integer.MAX_VALUE));
+		System.out.println();
+		
+		System.out.println("-----------------------Test  Case 3 ------------------------");
+		int [] c = {1 , 1};
+		BSTNode root3 = createBST(c);
+		System.out.println("Level Order Traversal : ");
+		BSTUtil.traverseLevelOrder(root3);
+		System.out.println("Is Valid BST : "+CheckIfBST.isBST(root3, Integer.MIN_VALUE,Integer.MAX_VALUE));
+		System.out.println();
+		
+		System.out.println("-----------------------Test  Case 4 ------------------------");
+		int [] d = {};
+		BSTNode root4 = createBST(d);
+		System.out.println("Level Order Traversal : ");
+		BSTUtil.traverseLevelOrder(root4);
+		System.out.println("Is Valid BST : "+CheckIfBST.isBST(root4, Integer.MIN_VALUE,Integer.MAX_VALUE));
+		System.out.println();
 		
 	}
 
@@ -55,3 +81,27 @@ public class BSTCreationAndalidation {
 		
 	}
 }
+/*
+ -----------------------Test  Case 1 ------------------------
+Level Order Traversal : 
+-----------Level Order Traversal-------------
+4	2	5	1	3	6	7	
+Is Valid BST : true
+
+-----------------------Test  Case 2 ------------------------
+Level Order Traversal : 
+-----------Level Order Traversal-------------
+1	2	3	
+Is Valid BST : true
+
+-----------------------Test  Case 3 ------------------------
+Level Order Traversal : 
+-----------Level Order Traversal-------------
+1	
+Is Valid BST : true
+
+-----------------------Test  Case 4 ------------------------
+Level Order Traversal : 
+-----------Level Order Traversal-------------
+Is Valid BST : true
+ */
