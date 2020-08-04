@@ -84,4 +84,10 @@ Is The Given Tree is BST : false
 6	6	
 Is The Given Tree is BST : false
  
+ 
+ Needs to handle this case also:
+ 
+        3
+     2     5
+  1    4
  * */
