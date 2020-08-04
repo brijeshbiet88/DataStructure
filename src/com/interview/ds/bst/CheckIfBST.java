@@ -60,7 +60,7 @@ public class CheckIfBST {
 
 }
 /*
----------------Test case 1---------------
+----------------Test case 1---------------
 -----------Level Order Traversal-------------
 4	2	6	1	3	5	7	
 Is The Given Tree is BST : true
@@ -68,7 +68,7 @@ Is The Given Tree is BST : true
 ---------------Test case 2---------------
 -----------Level Order Traversal-------------
 10	5	15	6	20	
-Is The Given Tree is BST : true
+Is The Given Tree is BST : false
 
 ---------------Test case 3---------------
 -----------Level Order Traversal-------------
@@ -82,13 +82,6 @@ Is The Given Tree is BST : false
 
 ---------------Test case 5---------------
 -----------Level Order Traversal-------------
-6	6	
-Is The Given Tree is BST : false
- 
- 
- Needs to handle this case also:
- 
-        3
-     2     5
-  1    4
+3	2	5	1	4	
+
  * */
