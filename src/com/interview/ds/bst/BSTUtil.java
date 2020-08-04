@@ -48,4 +48,31 @@ public class BSTUtil {
 		}
 		System.out.println();
 	}
+	
+	public static void traverseLevelOrderNewRow(BSTNode root) {
+		System.out.println("-----------Level Order Traversal-------------");
+		if(root == null) return;
+		Queue<BSTNode> q = new LinkedList<>();
+		q.add(root);
+		while(!q.isEmpty()) {
+			
+			int n = q.size();
+			
+			for (int i = 0 ; i < n; i++) {
+				BSTNode temp = q.poll();
+				
+				System.out.print(temp.getData()+"\t");
+				if(temp.getLeft() != null) {
+					q.add(temp.getLeft());
+				}
+				
+				if(temp.getRight() != null) {
+					q.add(temp.getRight());
+				}
+			}
+			System.out.println();
+			
+		}
+		System.out.println();
+	}
 }
