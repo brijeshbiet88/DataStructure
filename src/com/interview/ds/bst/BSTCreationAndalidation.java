@@ -37,7 +37,7 @@ public class BSTCreationAndalidation {
 		
 	}
 
-	private static BSTNode createBST(int[] a) {
+	public static BSTNode createBST(int[] a) {
 		BSTNode root = null;
 		for (int i = 0 ; i < a.length ; i++) {
 			if(root == null) {
@@ -52,7 +52,7 @@ public class BSTCreationAndalidation {
 		
 	}
 
-	private static void addNodeinBST(BSTNode root, BSTNode node) {
+	public static void addNodeinBST(BSTNode root, BSTNode node) {
 		if(root == null) 
 			root = node;
 		BSTNode tmp = root;
