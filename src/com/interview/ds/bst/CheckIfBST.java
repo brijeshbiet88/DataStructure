@@ -6,7 +6,7 @@ public class CheckIfBST {
 		System.out.println("---------------Test case 1---------------");
 		BSTNode root = BSTUtil.getBST7Nodes();
 		BSTUtil.traverseLevelOrder(root);
-		System.out.println("Is The Given Tree is BST : "+isBST(root));
+		System.out.println("Is The Given Tree is BST : "+isBST(root , Integer.MIN_VALUE , Integer.MAX_VALUE));
 	
 		System.out.println();
 		
@@ -17,7 +17,7 @@ public class CheckIfBST {
 		root2.right.setLeft(new BSTNode(6));
 		root2.right.setRight(new BSTNode(20));
 		BSTUtil.traverseLevelOrder(root2);
-		System.out.println("Is The Given Tree is BST : "+isBST(root2));
+		System.out.println("Is The Given Tree is BST : "+isBST(root2 , Integer.MIN_VALUE , Integer.MAX_VALUE));
 		
 		System.out.println();
 		
@@ -25,7 +25,7 @@ public class CheckIfBST {
 		BSTNode root3 = new BSTNode(6);
 		root3.setRight(new BSTNode(10));
 		BSTUtil.traverseLevelOrder(root3);
-		System.out.println("Is The Given Tree is BST : "+isBST(root3));
+		System.out.println("Is The Given Tree is BST : "+isBST(root3, Integer.MIN_VALUE , Integer.MAX_VALUE));
 		
 		System.out.println();
 		
@@ -33,7 +33,7 @@ public class CheckIfBST {
 		BSTNode root4 = new BSTNode(6);
 		root4.setLeft(new BSTNode(8));
 		BSTUtil.traverseLevelOrder(root4);
-		System.out.println("Is The Given Tree is BST : "+isBST(root4));
+		System.out.println("Is The Given Tree is BST : "+isBST(root4, Integer.MIN_VALUE , Integer.MAX_VALUE));
 		
 		System.out.println();
 		
@@ -41,19 +41,17 @@ public class CheckIfBST {
 		BSTNode root5 = new BSTNode(6);
 		root5.setRight(new BSTNode(6));
 		BSTUtil.traverseLevelOrder(root5);
-		System.out.println("Is The Given Tree is BST : "+isBST(root5));
+		System.out.println("Is The Given Tree is BST : "+isBST(root5, Integer.MIN_VALUE , Integer.MAX_VALUE));
 
 	}
 
-	private static boolean isBST(BSTNode root) {
+	private static boolean isBST(BSTNode root , int min , int max) {
 		if(root == null ) return true;
-		else if(root.left == null && root.right == null) return true;
-		else if(root.left != null && root.data <= root.left.data) return false;
-		else if(root.right != null && root.data >= root.right.data) return false;
-		else if(root.left != null && root.right != null
-				&& root.left.data < root.data
-				&& root.right.data > root.data) return true;
-		return (isBST(root.getLeft()) && isBST(root.getRight()));
+		
+		if(root.data < min || root.data > max) return false;
+		
+		return (isBST(root.left, min, root.data-1) && 
+                isBST(root.right, root.data+1, max)); 
 		
 	}
 
