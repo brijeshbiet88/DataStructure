@@ -38,8 +38,11 @@ public class CheckIfBST {
 		System.out.println();
 		
 		System.out.println("---------------Test case 5---------------");
-		BSTNode root5 = new BSTNode(6);
-		root5.setRight(new BSTNode(6));
+		BSTNode root5 = new BSTNode(3);
+		root5.setLeft(new BSTNode(2));
+		root5.setRight(new BSTNode(5));
+		root5.left.setLeft(new BSTNode(1));
+		root5.left.setRight(new BSTNode(4));
 		BSTUtil.traverseLevelOrder(root5);
 		System.out.println("Is The Given Tree is BST : "+isBST(root5, Integer.MIN_VALUE , Integer.MAX_VALUE));
 
