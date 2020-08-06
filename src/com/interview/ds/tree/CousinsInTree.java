@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.Queue;
 
 public class CousinsInTree {
+	static TreeNode xParent = null;
+	static TreeNode yParent = null;
+	static int xDepth = 0;
+	static int yDepth = 0;
 
 	public static void main(String[] args) {
 		TreeNode root = TreeUtil.get15NodeTree();
@@ -23,7 +27,7 @@ public class CousinsInTree {
 		
 		System.out.println("-----------Test Case4---------------");
 		n1 = 11 ;n2 = 8;
-		System.out.println("Are Nodes "+n1+" and "+n2+" Cousins : "+areCousins(root, n1 , n2));
+		System.out.println("Are Nodes "+n1+" and "+n2+" Cousins : "+areCousins3(root, n1 , n2));
 		
 		System.out.println("-----------Test Case5---------------");
 		n1 = 10 ;n2 = 11;
@@ -124,7 +128,31 @@ public class CousinsInTree {
 		return findLevelUtil(root.right, x, level+1);
 		
 	}
+	
+	private static boolean areCousins3(TreeNode root, int x, int y) {
+	   if(root == null) return false;
+	   helper(root, x, y, 0 , null);
+	   return (xDepth == yDepth && xParent != yParent);
+	}
+	
+	public static void helper(TreeNode root , int x , int y , int depth , TreeNode parent) {
+		if(root == null) return;
+		if(root.data == x) {
+			xDepth = depth;
+			xParent = parent;
+		}
+		
+		if(root.data == y) {
+			yDepth = depth;
+			yParent = parent;
+		}
+		
+		helper(root.left, x, y, depth+1, root);
+		helper(root.right, x, y, depth+1, root);
+	}
 }
+
+	
 
 
 
