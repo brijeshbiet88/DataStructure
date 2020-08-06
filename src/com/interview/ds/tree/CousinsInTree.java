@@ -11,7 +11,7 @@ public class CousinsInTree {
 		TreeUtil.printLevelOrder2(root);
 		System.out.println("-----------Test Case 1---------------");
 		int n1 = 4 ,n2 = 7;
-		System.out.println("Are Nodes "+n1+" and "+n2+" Cousins : "+areCousins(root, n1 , n2));
+		System.out.println("Are Nodes "+n1+" and "+n2+" Cousins : "+areCousins2(root, n1 , n2));
 		
 		System.out.println("-----------Test Case 2---------------");
 		n1 = 4 ;n2 = 5;
@@ -24,6 +24,19 @@ public class CousinsInTree {
 		System.out.println("-----------Test Case4---------------");
 		n1 = 11 ;n2 = 8;
 		System.out.println("Are Nodes "+n1+" and "+n2+" Cousins : "+areCousins(root, n1 , n2));
+		
+		System.out.println("-----------Test Case5---------------");
+		n1 = 10 ;n2 = 11;
+		System.out.println("Are Nodes "+n1+" and "+n2+" Cousins : "+areCousins(root, n1 , n2));
+		
+		System.out.println("-----------Test Case6---------------");
+		n1 = 11 ;n2 = 12;
+		System.out.println("Are Nodes "+n1+" and "+n2+" Cousins : "+areCousins(root, n1 , n2));
+		
+		System.out.println("-----------Test Case6---------------");
+		n1 = 2 ;n2 = 4;
+		System.out.println("Are Nodes "+n1+" and "+n2+" Cousins : "+areCousins(root, n1 , n2));
+		
 		
 	}
 
@@ -69,13 +82,58 @@ public class CousinsInTree {
 		return false;
 
 	}
+	
+	private static boolean areCousins2(TreeNode root, int x, int y) {
+		int level1 = findLevel(root, x);
+		int level2 = findLevel(root, x);
+	    if(level1 != level2) {
+	    	return false;
+	    }
+	    return !areSiblings(root ,x ,y);
+		
+	}
+	
+	private static boolean areSiblings(TreeNode root, int x, int y) {
+		   if(root == null) return false;
+		   if(root.left != null && root.left.data == x 
+			 && root.right != null && root.right.data == y) {
+			   return true;
+		   }
+		   return (areSiblings(root.left, x, y) || areSiblings(root.right, x, y));
+		   
+	}
+
+
+	public static int findLevel(TreeNode root , int x) {
+		return findLevelUtil(root , x , 1);
+	}
+
+
+	private static int findLevelUtil(TreeNode root, int x, int level) {
+		if(root == null) return 0;
+		
+		if(root.data == x) {
+			return level;
+		}
+		
+		int downLevel = findLevelUtil(root.left, x, level+1);
+		if(downLevel != 0) {
+			return downLevel;
+		}
+		
+		return findLevelUtil(root.right, x, level+1);
+		
+	}
 }
+
+
 
 /*
  			1 
 	   2             3 
   4        5     6        7 
  8 9     10 11 12 13    14 15 
+
 -----------Test Case 1---------------
 Are Nodes 4 and 7 Cousins : true
 -----------Test Case 2---------------
@@ -84,4 +142,10 @@ Are Nodes 4 and 5 Cousins : false
 Are Nodes 1 and 3 Cousins : false
 -----------Test Case4---------------
 Are Nodes 11 and 8 Cousins : true
+-----------Test Case5---------------
+Are Nodes 10 and 11 Cousins : false
+-----------Test Case6---------------
+Are Nodes 11 and 12 Cousins : true
+-----------Test Case6---------------
+Are Nodes 2 and 4 Cousins : false
  * */
