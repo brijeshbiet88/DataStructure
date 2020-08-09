@@ -16,8 +16,8 @@ public class CoinChangeProblem {
 		System.out.println();
 		
 		System.out.println("---------------Test Case 2--------------");
-		int [] coins2 = {1 , 2  , 5, 10};
-		amount = 6249;
+		int [] coins2 = {484,395,346,103,329};
+		amount = 4259;
 		minimumCoins = coinChange(coins2, amount);
 		System.out.print("Amount : "+amount+ " Available Coins :");
 		for(int coin : coins2)
@@ -71,7 +71,7 @@ public class CoinChangeProblem {
 		System.out.println();
 		
 		System.out.println("---------------Test Case 7--------------");
-		int [] coins7 = {186,419,83,408};
+		int [] coins7 = {83 , 186 , 408 , 419};
 		amount = 6249;
 		minimumCoins = coinChange(coins7, amount);
 		System.out.print("Amount : "+amount+ " Available Coins :");
@@ -87,33 +87,60 @@ public class CoinChangeProblem {
 		if (amount == 0)
 			return 0;
 		int[][] t = new int[coins.length + 1][amount + 1];
-        for(int i = 0 ; i <= amount ; i++) {
-        	t[0][i] = Integer.MAX_VALUE;
-        }
+		for (int i = 1; i <= amount; i++) {
+			t[0][i] = Integer.MAX_VALUE;
+		}
+		for (int i = 0; i <t.length; i++) {
+			t[i][0] = 0;
+		}
 		for (int i = 0; i < coins.length; i++) {
 			for (int j = 1; j < t[0].length; j++) {
 
 				if (j < coins[i]) {
 					t[i + 1][j] = t[i][j];
-				}else if(j  == coins[i]) {
-					t[i+1][j] = 1;
-				}
-				else {
+				} else {
+					
 					int rightValue = t[i + 1][j - coins[i]];
 					int topValue = t[i][j];
-					if(rightValue == Integer.MAX_VALUE && topValue == Integer.MAX_VALUE) {
-						t[i + 1][j] = Math.min(topValue, rightValue);
-					}else {
-						t[i + 1][j] = Math.min(topValue, rightValue) + 1;
+					if (rightValue == Integer.MAX_VALUE && topValue == Integer.MAX_VALUE) {
+						t[i + 1][j] = topValue;
+					} else {
+						if(topValue > rightValue)
+							t[i + 1][j] = Math.min(topValue, rightValue) + 1;
+						else {
+							t[i + 1][j] = topValue;
+						}
 					}
+					
 				}
-
 			}
 		}
-		
+
+				
 		int result = t[coins.length][amount] == Integer.MAX_VALUE ? -1 : t[coins.length][amount];
 		return result;
 	}
+	
+	public static int coinChange2(int coins[] , int amount){
+        int T[] = new int[amount + 1];
+        int R[] = new int[amount + 1];
+        T[0] = 0;
+        for(int i = 1; i <= amount; i++){
+            T[i] = Integer.MAX_VALUE-1;
+            R[i] = -1;
+        }
+        for(int i = 0 ; i < coins.length ; i++){
+            for(int j = 1; j <= amount; j++){
+                if(j >= coins[i]){
+                    if (T[j - coins[i]] + 1 < T[j]) {
+                        T[j] = 1 + T[j - coins[i]];
+                        R[j] = i;
+                    }
+                }
+            }
+        }
+        return T[amount];
+    }
 
 }
 /*
@@ -122,8 +149,8 @@ Amount : 7 Available Coins :1 2 3
 Minimum Coins Needed: 3
 
 ---------------Test Case 2--------------
-Amount : 6249 Available Coins :1 2 5 10 
-Minimum Coins Needed: 627
+Amount : 4259 Available Coins :103 329 346 395 484 
+Minimum Coins Needed: 11
 
 ---------------Test Case 3--------------
 Amount : 0 Available Coins :
@@ -143,7 +170,6 @@ Minimum Coins Needed: -1
 
 ---------------Test Case 7--------------
 Amount : 6249 Available Coins :83 186 408 419 
-Minimum Coins Needed: 23
-
+Minimum Coins Needed: 20
 
  * */
