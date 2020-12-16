@@ -18,8 +18,8 @@ public class TopView {
 			this.data = data;
 			this.level = level;
 		}
-	} 
-	
+	}
+
 	public static void main(String[] args) {
 		TreeNode root = TreeUtil.get15NodeTree();
 		System.out.println("Print Level Order Traversal :");
@@ -29,7 +29,7 @@ public class TopView {
 		printTopView(root);
 		System.out.println();
 		System.out.println("---------------------------------------");
-		
+
 		TreeNode root2 = TreeUtil.getTree();
 		System.out.println("Print Level Order Traversal :");
 		TreeUtil.printLevelOrder2(root2);
@@ -40,9 +40,9 @@ public class TopView {
 	}
 
 	private static void printTopView(TreeNode root) {
-		int hd = 0 , level = 0;
+		int hd = 0, level = 0;
 		TreeMap<Integer, Pair> map = new TreeMap<>();
-		fillMap(root, hd, level , map);
+		fillMap(root, hd, level, map);
 
 		Iterator<Entry<Integer, Pair>> itr = map.entrySet().iterator();
 		while (itr.hasNext()) {
@@ -69,7 +69,7 @@ public class TopView {
 }
 
 /*
- *Print Level Order Traversal :
+Print Level Order Traversal :
 1 
 2 3 
 4 5 6 7 
@@ -87,4 +87,4 @@ Print Level Order Traversal :
 
 Vertical Order Traversal Of Tree : 
 10 8 4 2 1 3 7  
- */
+*/
