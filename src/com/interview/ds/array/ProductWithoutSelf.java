@@ -47,8 +47,8 @@ public class ProductWithoutSelf {
 	}
 }
 /*
- *  
- *  Array Elements : 
+*  
+Array Elements : 
 2 3 4 5 
 
 Array Elements After Calculting Product: 
