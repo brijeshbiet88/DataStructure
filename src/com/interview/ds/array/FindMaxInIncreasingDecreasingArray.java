@@ -20,6 +20,18 @@ public class FindMaxInIncreasingDecreasingArray {
 		int a3 [] = {14 , 7 };
 		max = findMax(a3 , 0 , a3.length-1);
 		System.out.println("Max is : "+max);
+		
+		System.out.println();
+		System.out.println("---------------Test Case 4------------------");
+		int a4 [] = {9 , 8 ,  7 , 6 , 5 , 4 , 3 , 2 ,1 };
+		max = findMax(a4 , 0 , a4.length-1);
+		System.out.println("Max is : "+max);
+		
+		System.out.println();
+		System.out.println("---------------Test Case 5------------------");
+		int a5 [] = {1 , 2 , 3 , 4, 5, 6, 7 , 8, 9};
+		max = findMax(a5 , 0 , a5.length-1);
+		System.out.println("Max is : "+max);
 	}
 
 	private static int findMax(int[] a , int start , int end) {
@@ -43,7 +55,8 @@ public class FindMaxInIncreasingDecreasingArray {
 	}
 
 }
-/*---------------Test Case 1------------------
+/*
+ * ---------------Test Case 1------------------
 Max is : 61
 
 ---------------Test Case 2------------------
@@ -51,4 +64,11 @@ Max is : 7
 
 ---------------Test Case 3------------------
 Max is : 14
-*/
+
+---------------Test Case 4------------------
+Max is : 9
+
+---------------Test Case 5------------------
+Max is : 9
+
+ */
