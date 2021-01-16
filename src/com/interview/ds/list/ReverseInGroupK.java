@@ -4,6 +4,7 @@ public class ReverseInGroupK {
 
 	public static void main(String[] args) {
 		ListNode start = LinkedListUtil.getList2();
+		start = start.next.next;
 		System.out.println("Print Original List :");
 		LinkedListUtil.printList(start);
 		System.out.println();
@@ -12,10 +13,15 @@ public class ReverseInGroupK {
 		LinkedListUtil.printList(start);
 	}
 
-	private static ListNode reverseInGroup(ListNode start, int k) {
-		ListNode curr = start , prev = null , next = null;
+	private static ListNode reverseInGroup(ListNode head, int k) {
+		ListNode curr = head , prev = null , next = null;
 		int count  = 0;
-		
+		if(head == null) {
+			return head;
+		}else if(length(head) < k) {
+			return head;
+		}
+		curr = head;
 		while(count < k && curr != null) {
 			next = curr.next;
 			curr.next = prev;
@@ -25,9 +31,20 @@ public class ReverseInGroupK {
 		}
 		
 		 if (next != null)  
-	          start.next = reverseInGroup(next, k); 
+	          head.next = reverseInGroup(next, k); 
 		
 		return prev;
+	}
+
+	private static int length(ListNode start) {
+		int len = 0;
+		ListNode curr = start;
+		while(curr != null) {
+			curr = curr.next;
+			len++;
+		}
+		
+		return len;
 	}
 
 }
