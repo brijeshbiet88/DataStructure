@@ -17,7 +17,7 @@ public class SetMismatch {
 		System.out.println();
 		
 
-		System.out.println("-----------------Test Case 2 --------------------");
+		System.out.println("-----------------Test Case 3 --------------------");
 		int[] nums3 = {2 , 2 };
 		result = findErrorNums(nums3);
 		System.out.println("Duplicate Num : " + result[0] + " Missing Number : " + result[1]);
@@ -47,6 +47,7 @@ public class SetMismatch {
 
 	}
 }
+
 /*
  * -----------------Test Case 1 --------------------
 Duplicate Num : 2 Missing Number : 1
@@ -54,7 +55,7 @@ Duplicate Num : 2 Missing Number : 1
 -----------------Test Case 2 --------------------
 Duplicate Num : 1 Missing Number : 2
 
------------------Test Case 2 --------------------
+-----------------Test Case 3 --------------------
 Duplicate Num : 2 Missing Number : 1
 
 
