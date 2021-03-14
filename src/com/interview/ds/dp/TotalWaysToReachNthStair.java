@@ -4,7 +4,7 @@ public class TotalWaysToReachNthStair {
 
 	public static void main(String[] args) {
 		System.out.println("------------------Test Case 1------------------");
-		int n = 5;
+		int n = 3;
 		int noOfWays = findNoOfWays(n);
 		System.out.println("Total Number Of Ways To Reach "+n+"th Stair "+noOfWays);
 		System.out.println();
@@ -16,7 +16,13 @@ public class TotalWaysToReachNthStair {
 		System.out.println();
 		
 		System.out.println("------------------Test Case 3------------------");
-		n = 3;
+		n = 5;
+		noOfWays = findNoOfWays(n);
+		System.out.println("Total Number Of Ways To Reach "+n+"rd Stair "+noOfWays);
+		System.out.println();
+		
+		System.out.println("------------------Test Case 4------------------");
+		n = 6;
 		noOfWays = findNoOfWays(n);
 		System.out.println("Total Number Of Ways To Reach "+n+"rd Stair "+noOfWays);
 		System.out.println();
