@@ -3,12 +3,27 @@ package com.interview.ds.dp;
 public class EggDropping {
 
 	public static void main(String[] args) {
+		System.out.println("------------------Test Case 1--------------------");
 		EggDropping ed = new EggDropping();
 		int noOfEggs = 2 , noOfFloors = 100;
 		System.out.println("No of Eggs : "+noOfEggs+" and No of Floors "+noOfFloors);
         int result = ed.calculate(noOfEggs,noOfFloors);
         System.out.println("Minimum No of Attempts in WorstCase To Find Floor Where Egg will Break From : "+result);
-
+        System.out.println();
+        
+        System.out.println("------------------Test Case 2--------------------");
+		noOfEggs = 3 ; noOfFloors = 14;
+		System.out.println("No of Eggs : "+noOfEggs+" and No of Floors "+noOfFloors);
+        result = ed.calculate(noOfEggs,noOfFloors);
+        System.out.println("Minimum No of Attempts in WorstCase To Find Floor Where Egg will Break From : "+result);
+        System.out.println();
+        
+        System.out.println("------------------Test Case 3--------------------");
+		noOfEggs = 10 ; noOfFloors = 10000;
+		System.out.println("No of Eggs : "+noOfEggs+" and No of Floors "+noOfFloors);
+        result = ed.calculate(noOfEggs,noOfFloors);
+        System.out.println("Minimum No of Attempts in WorstCase To Find Floor Where Egg will Break From : "+result);
+        System.out.println();
 	}
 	
 	public int calculate(int eggs, int floors) {

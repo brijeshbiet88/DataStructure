@@ -43,6 +43,7 @@ public class InsertWordsInTrie {
 				return false;
 			}
 		}
+		
 		return true;
 	}
 

@@ -11,10 +11,16 @@ public class TaskScheduler {
 		System.out.println("Total time complete all tasks = "+ leastInterval(tasks, n));
 		System.out.println();
 		
-		System.out.println("--------------Test Case 1-----------------");
+		System.out.println("--------------Test Case 2-----------------");
 		char [] tasks2 = {'A' , 'A' , 'A' , 'A' , 'A' , 'A' , 'B' , 'C' , 'D' , 'E' , 'F' , 'G'};
 		n = 2;
 		System.out.println("Total time complete all tasks = "+ leastInterval(tasks2, n));
+		System.out.println();
+		
+		System.out.println("--------------Test Case 3-----------------");
+		char [] tasks3 = {'A' , 'A' , 'A' , 'B' , 'B' , 'B'  ,'C' , 'C' , 'C'};
+		n = 2;
+		System.out.println("Total time complete all tasks = "+ leastInterval(tasks3, n));
 		System.out.println();
 		
 	}

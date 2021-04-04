@@ -11,7 +11,7 @@ public class CoinChangeProblem {
 		System.out.print("Amount : "+amount+ " Available Coins :");
 		for(int coin : coins)
 			System.out.print(coin+" ");
-		int minimumCoins = coinChange(coins, amount);
+		int minimumCoins = coinChange2(coins, amount);
 		System.out.println("\nMinimum Coins Needed: "+minimumCoins);
 		System.out.println();
 		
@@ -70,7 +70,7 @@ public class CoinChangeProblem {
 		System.out.println("\nMinimum Coins Needed: "+minimumCoins);
 		System.out.println();
 		
-		System.out.println("---------------Test Case 7--------------");
+		/*System.out.println("---------------Test Case 7--------------");
 		int [] coins7 = {83 , 186 , 408 , 419};
 		amount = 6249;
 		minimumCoins = coinChange2(coins7, amount);
@@ -80,6 +80,7 @@ public class CoinChangeProblem {
 		
 		System.out.println("\nMinimum Coins Needed: "+minimumCoins);
 		System.out.println();
+		*/
 	}
 	
 	public static int coinChange(int[] coins, int amount) {
@@ -122,21 +123,33 @@ public class CoinChangeProblem {
 	}
 	
 	public static int coinChange2(int coins[] , int amount){
-        int T[] = new int[amount + 1];
-        T[0] = 0;
-        for(int i = 1; i <= amount; i++){
-            T[i] = Integer.MAX_VALUE-1;
+        int T[][] = new int[coins.length][amount + 1];
+        for(int i = 0 ; i < coins.length ; i++) {
+        	T[i][0] = 0;
         }
-        for(int i = 0 ; i < coins.length ; i++){
-            for(int j = 1; j <= amount; j++){
-                if(j >= coins[i]){
-                    if (T[j - coins[i]] + 1 < T[j]) {
-                        T[j] = 1 + T[j - coins[i]];
-                    }
-                }
-            }
+        
+        
+        for(int i = 0; i < coins.length ; i++) {
+        	for(int j = 1 ; j <= amount ; j++ ) {
+        		int coin = coins[i];
+        		if(j >= coin ) {
+        			if(i > 0)
+        				T[i][j] = Math.min(T[i-1][j], T[i][j - coin] + 1);
+        			else {
+        				T[i][j] = T[i][j - coin] + 1;
+        			}
+        		} else {
+        			if(i > 0)
+        				T[i][j] = T[i-1][j] ;
+        			else {
+        				T[i][j] = Integer.MAX_VALUE;
+        			}
+        		}
+        		
+        	}
         }
-        return T[amount];
+        
+        return T[coins.length-1][amount];
     }
 
 }
